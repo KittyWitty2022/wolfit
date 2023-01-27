@@ -77,6 +77,11 @@ def test_post_should_have_proper_status_for_user_when_new(
     assert not single_post.already_voted(test_user)
 
 
+def test_post_adjusted_vote(test_db):
+    p = Post(title="New post", body="Not interesting", vote_count=None)
+    p.adjust_vote(1)
+    assert p.vote_count == 1
+
 def test_post_vote_count_goes_up_after_voting(test_db, test_user, single_post):
     assert single_post.vote_count == 0
     single_post.up_vote(test_user)
