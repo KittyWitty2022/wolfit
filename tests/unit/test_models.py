@@ -82,6 +82,13 @@ def test_post_adjusted_vote(test_db):
     p.adjust_vote(1)
     assert p.vote_count == 1
 
+
+def test_post_down_vote(test_db, test_user, single_post):
+    assert single_post.vote_count == 0
+    single_post.down_vote(test_user)
+    assert single_post.vote_count == -1
+
+
 def test_post_vote_count_goes_up_after_voting(test_db, test_user, single_post):
     assert single_post.vote_count == 0
     single_post.up_vote(test_user)
