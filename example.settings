@@ -1,2 +1,2 @@
-SECRET_KEY="your-secret-key"
+SECRET_KEY=b'\x1d\x12W\x84wp3\xaaQ\xc7!~:h\xfeS<\xcc\x1e\xd4P\xacK\xe9'
 BLOG_DATABASE_NAME = 'wolfit_test.db'
