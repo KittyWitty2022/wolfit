@@ -18,3 +18,8 @@ def test_hour():
 
 def test_hours():
     assert (pretty_date(datetime.utcnow() - timedelta(seconds=57600))) == "16 hours ago"
+
+def test_day_yesterday():
+    assert (pretty_date(datetime.utcnow() - timedelta(days=1))) == "Yesterday"
+
+
