@@ -22,6 +22,16 @@ def login(client, username, password):
 def logout(client):
     return client.get(url_for("logout"), follow_redirects=True)
 
+#scrap,redo
+def create_post(client, test_user):
+    return client.get(url_for("create_post"), follow_redirects=True)
+
+
+'''
+def test_create_post_register(client, test_user):
+    assert create_post(client, test_user) == client.get(url_for("register"))
+'''
+
 
 def test_no_posts_no_user(client):
     """Start with a blank database."""
